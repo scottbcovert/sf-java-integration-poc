@@ -1,6 +1,9 @@
 ## Getting Started
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Copy `.env.example` to `.env` file and set your Salesforce credentials accordingly
+
+Afterward, compiling and executing the Java app should connect to the Salesforce API
+and print out a list of lead records meeting the criteria of a SOQL query.
 
 ## Folder Structure
 
@@ -8,11 +11,8 @@ The workspace contains two folders by default, where:
 
 - `src`: the folder to maintain sources
 - `lib`: the folder to maintain dependencies
+- `bin`: the default folder to maintain compiled output files (added to .gitignore)
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+## ACKNOWLEDGMENTS
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
-
-## Dependency Management
-
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+- https://lovesalesforceyes.blogspot.com/2021/03/salesforce-and-java-integration-with.html
