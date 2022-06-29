@@ -5,7 +5,7 @@
 Copy `.env.example` to `.env` file and set your Salesforce credentials accordingly
 
 Afterward, compiling and executing the Java app should connect to the Salesforce API
-and print out a list of lead records meeting the criteria of a SOQL query.
+and print out a list of records meeting the criteria of a SOQL query.
 
 ## Folder Structure
 
