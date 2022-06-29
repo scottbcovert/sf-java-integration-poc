@@ -10,13 +10,20 @@ import org.apache.http.util.EntityUtils;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 public class Salesforce_Java_Integration {
+	private Salesforce_Credentials creds;
+    private String baseUri;
+    private Header oauthHeader;
 	
-	public Salesforce_Java_Integration(final Salesforce_Credentials creds)
+    public Salesforce_Java_Integration(final Salesforce_Credentials creds)
 	{
-		final String baseUri;
-		final Header prettyPrintHeader = new BasicHeader("X-PrettyPrint", "1");
+		this.creds = creds;
+    }
+        
+    public void login()
+    {
+        final String baseUri;
 		final Header oauthHeader;
-		final String userName  = creds.getUserName();
+        final String userName  = creds.getUserName();
 		final String passWordAndToken  = creds.getPassWordAndToken();
 		final String clientId     = creds.getClientId();
 		final String clientSecret = creds.getClientSecret();
@@ -34,7 +41,6 @@ public class Salesforce_Java_Integration {
 					URLEncoder.encode(userName, "UTF-8") +
 				"&password=" +URLEncoder.encode(passWordAndToken , "UTF-8");
 
-			System.out.println("loginURL---- "+loginURL);
 			HttpPost httpPost = new HttpPost(loginURL);
 			{
 				// POST request to Login
@@ -56,14 +62,11 @@ public class Salesforce_Java_Integration {
                                                               new JSONTokener(getResult).nextValue();
 					loginAccessToken = jsonObject.getString("access_token");
 					loginInstanceUrl = jsonObject.getString("instance_url");
-					baseUri = loginInstanceUrl;
-					oauthHeader = new BasicHeader("Authorization", "OAuth "
+					this.baseUri = loginInstanceUrl;
+					this.oauthHeader = new BasicHeader("Authorization", "OAuth "
 					                                                    + loginAccessToken) ;
 					// release connection
-					httpPost.releaseConnection();
-					System.out.println("oauthHeader===>>>"+oauthHeader);
-					System.out.println("prettyPrintHeader===>>>"+prettyPrintHeader);
-					System.out.println("baseUri===>>>"+baseUri);
+					httpPost.releaseConnection();					
 				}
 				else {
 					System.out.println("Please check your internet connection !!!");

@@ -12,6 +12,7 @@ public class App {
         final String clientSecret = dotenv.get("CLIENT_SECRET");
         final String loginEnvUrl = dotenv.get("LOGIN_ENV_URL");
         Salesforce_Credentials creds = new Salesforce_Credentials(userName, passWord, securityToken, clientId, clientSecret, loginEnvUrl);        
-        Salesforce_Java_Integration Integration = new Salesforce_Java_Integration(creds);
+        Salesforce_Java_Integration sf = new Salesforce_Java_Integration(creds);
+        sf.login();
 	}
 }
