@@ -6,8 +6,9 @@ public class Salesforce_Credentials {
     private String clientId;
     private String clientSecret;
     private String loginEnvUrl;
+    private String apiVersion;
 
-    public Salesforce_Credentials(final String userName, final String passWord, final String securityToken, final String clientId, final String clientSecret, final String loginEnvUrl) {
+    public Salesforce_Credentials(final String userName, final String passWord, final String securityToken, final String clientId, final String clientSecret, final String loginEnvUrl, final String apiVersion) {
         this.userName = userName;
         this.passWord = passWord;
         this.securityToken = securityToken;
@@ -15,6 +16,7 @@ public class Salesforce_Credentials {
         this.clientId = clientId;
         this.clientSecret = clientSecret;
         this.loginEnvUrl = loginEnvUrl;
+        this.apiVersion = apiVersion;
     }
 
     public String getUserName() { return this.userName; }
@@ -24,4 +26,5 @@ public class Salesforce_Credentials {
     public String getClientId() { return this.clientId; }
     public String getClientSecret() { return this.clientSecret; }
     public String getLoginEnvUrl() { return this.loginEnvUrl; }
+    public String getApiVersion() { return this.apiVersion; }
 }

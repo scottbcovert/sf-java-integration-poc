@@ -1,3 +1,5 @@
+# Salesforce Java Integration PoC
+
 ## Getting Started
 
 Copy `.env.example` to `.env` file and set your Salesforce credentials accordingly
@@ -15,4 +17,4 @@ The workspace contains two folders by default, where:
 
 ## ACKNOWLEDGMENTS
 
-- https://lovesalesforceyes.blogspot.com/2021/03/salesforce-and-java-integration-with.html
+- [Blog post with initial source used for Salesforce Java integration](https://lovesalesforceyes.blogspot.com/2021/03/salesforce-and-java-integration-with.html)
